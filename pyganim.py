@@ -305,8 +305,6 @@ class PygAnimation(object):
             methodToCall = getattr(self._transformedImages[i], wrappedMethodName)
             methodToCall(*args, **kwargs)
 
-    # There's probably a more terse way to generate the following methods,
-    # but I don't want to make the code even more unreadable.
     def convert(self, *args, **kwargs):
         # See http://pygame.org/docs/ref/surface.html#Surface.convert
         self._surfaceMethodWrapper('convert', *args, **kwargs)
@@ -386,7 +384,6 @@ class PygAnimation(object):
             self.stop()
 
     state = property(_propGetState, _propSetState)
-
 
     def _propGetVisibility(self):
         return self._visibility
